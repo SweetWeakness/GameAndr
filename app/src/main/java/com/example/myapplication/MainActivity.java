@@ -12,44 +12,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     String tag="main_activity";
-    String[][] alpha=new String[12][7];
-
-    String[] data = new String[84];
-
-    GridView gvMain;
-    ArrayAdapter<String> adapter;
 
 
-    /** Called when the activity is first created. */
-    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game2);
         Log.d(tag,"onCreate | ");
-        for(int i=0;i<84;i++){
-            data[i]="[ ]";
-        }
 
 
-        adapter = new ArrayAdapter<String>(this, R.layout.activity_game2, R.id.tvText, data);
-        gvMain = (GridView) findViewById(R.id.gvMain);
-        gvMain.setAdapter(adapter);
-        adjustGridView();
-
-        gvMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d(tag,"Нажата кнопка");
-            }
-        });
     }
 
-
-    private void adjustGridView() {
-        gvMain.setNumColumns(7);
-        gvMain.setVerticalSpacing(1);
-        gvMain.setHorizontalSpacing(1);
-    }
 
     protected void onResume(){
         super.onResume();
